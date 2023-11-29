@@ -19,9 +19,6 @@ float kDw = 0.06;
 float kPx = 0.05;
 float kDx = 0;
 int done = 0;
-float aC = 0;
-float oldMotorL;
-float oldMotorR;
 
 int goalAngle = 0;
 int goalDistance = 0;
@@ -79,34 +76,16 @@ void updatePID() {
 			angleCorrection = -0.3;
 		}
 
-		int smallAccountL;
-		int smallAccountR;
-		if (angleCorrection + angleCorrection< 0){ // left right mototr diff signs vars
-			smallAccountL = -0.4;
+		int smallAccount;
+		if (angleCorrection < 0){
+			smallAccount = -0.4;
 		}
 		else{
-			smallAccountL = 0.4;
-		}
-		if (angleCorrection - angleCorrection< 0){ // left right mototr diff signs vars
-			smallAccountR = -0.4;
-		}
-		else{
-			smallAccountR = 0.4;
+			smallAccount = 0.4;
 		}
 
-
-		setMotorLPWM ( distanceCorrection + angleCorrection + smallAccountL);
-		setMotorRPWM (distanceCorrection - angleCorrection + smallAccountR );
-
-//
-//		if ((oldMotorL - (distanceCorrection + angleCorrection + smallAccount) > aC) && (oldMotorR - (distanceCorrection + angleCorrection + smallAccount) > aC)){
-//			SetMotorLPWM = oldMotorL + aC;
-//			SetMotorRPWM = oldMotorR - aC;
-//		}
-//
-//		oldMotorL = distanceCorrection + angleCorrection + smallAccount ;
-//		oldMotorR = distanceCorrection - angleCorrection + smallAccount ;
-//
+			//setMotorLPWM ( distanceCorrection + angleCorrection + smallAccount);
+			//setMotorRPWM (distanceCorrection - angleCorrection + smallAccount );
 
 		if ( (distanceError < 10 && distanceError > -10) && (angleError < 5 && angleError > -5)){
 			done += 1;

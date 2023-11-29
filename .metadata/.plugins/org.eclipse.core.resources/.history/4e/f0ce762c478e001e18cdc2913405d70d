@@ -58,7 +58,6 @@ int16_t left_counts = 0;
 int16_t right_counts = 0;
 int16_t frontIR = 0;
 int16_t leftIR = 0;
-int16_t rightIR = 0;
 
 /* USER CODE END PV */
 
@@ -144,10 +143,9 @@ int main(void)
 
 	  frontIR = (readFrontRightIR()+readFrontLeftIR())/2;
 	  leftIR = readLeftIR();
-	  rightIR = readRightIR();
 
-	  int thresholdFront = 1000;
-	  int thresholdSide = 1200;
+	  int thresholdFront = 1800;
+	  int thresholdSide = 1900;
 
 	 if ((readFrontRightIR()+readFrontLeftIR())/2 <= thresholdFront){
 		  move(1);

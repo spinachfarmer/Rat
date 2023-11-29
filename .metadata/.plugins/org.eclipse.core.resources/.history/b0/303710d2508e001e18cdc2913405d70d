@@ -131,7 +131,12 @@ int main(void)
 
 
 
-
+move(1);
+turn(1);
+move(1);
+turn(-1);
+move(3);
+turn(-1);
 
 
 

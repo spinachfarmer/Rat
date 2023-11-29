@@ -1,29 +1,17 @@
-15:07:16 **** Incremental Build of configuration Debug for project Rat ****
+16:59:29 **** Incremental Build of configuration Debug for project Rat ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/pid.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pid.d" -MT"Core/Src/pid.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pid.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:149:15: warning: unused variable 'thresholdSide' [-Wunused-variable]
-  149 |           int thresholdSide = 1900;
-      |               ^~~~~~~~~~~~~
-../Core/Src/main.c:148:15: warning: unused variable 'thresholdFront' [-Wunused-variable]
-  148 |           int thresholdFront = 1800;
-      |               ^~~~~~~~~~~~~~
-../Core/Src/pid.c: In function 'updatePID':
-../Core/Src/pid.c:79:21: warning: variable 'smallAccount' set but not used [-Wunused-but-set-variable]
-   79 |                 int smallAccount;
-      |                     ^~~~~~~~~~~~
 arm-none-eabi-gcc -o "Rat.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\emily\STM32CubeIDE\workspace_1.13.2\Rat\Rat\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Rat.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Rat.elf
  
 arm-none-eabi-size   Rat.elf 
 arm-none-eabi-objdump -h -S  Rat.elf  > "Rat.list"
    text	   data	    bss	    dec	    hex	filename
-  20568	     32	   2328	  22928	   5990	Rat.elf
+  21128	     32	   2336	  23496	   5bc8	Rat.elf
 Finished building: default.size.stdout
  
 Finished building: Rat.list
  
 
-15:07:18 Build Finished. 0 errors, 3 warnings. (took 1s.344ms)
+16:59:30 Build Finished. 0 errors, 0 warnings. (took 1s.306ms)
 
